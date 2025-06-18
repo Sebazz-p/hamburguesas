@@ -13,19 +13,17 @@
       --blanco: #ffffff;
       --sombra: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--fondo-claro);
       color: var(--oscuro);
+      scroll-behavior: smooth;
     }
-
     header {
       background: linear-gradient(to right, var(--color-principal), var(--color-secundario));
       color: var(--blanco);
@@ -33,29 +31,24 @@
       padding: 50px 20px 30px;
       position: relative;
     }
-
     header img {
       width: 200px;
       border-radius: 15px;
       margin-top: 20px;
       box-shadow: var(--sombra);
     }
-
     h1 {
       font-size: 48px;
       margin: 0;
     }
-
     .slogan {
       margin-top: 10px;
       font-size: 20px;
       font-weight: bold;
     }
-
     nav {
       margin-top: 20px;
     }
-
     nav a {
       text-decoration: none;
       color: var(--blanco);
@@ -66,19 +59,16 @@
       display: inline-block;
       transition: all 0.3s ease;
     }
-
     nav a:hover {
       background-color: #1a252f;
       transform: scale(1.05);
     }
-
     .sidebar {
       position: fixed;
       top: 20px;
       left: 20px;
       z-index: 1000;
     }
-
     .sidebar button {
       background-color: var(--oscuro);
       color: var(--blanco);
@@ -88,7 +78,6 @@
       cursor: pointer;
       font-size: 18px;
     }
-
     .menu-content {
       display: none;
       flex-direction: column;
@@ -97,22 +86,18 @@
       margin-top: 5px;
       border-radius: 8px;
     }
-
     .menu-content a {
       color: var(--blanco);
       text-decoration: none;
       padding: 10px 0;
     }
-
     .menu-content a:hover {
       text-decoration: underline;
     }
-
     main {
       padding: 40px 20px;
       text-align: center;
     }
-
     main img {
       max-width: 100%;
       height: auto;
@@ -120,17 +105,14 @@
       box-shadow: var(--sombra);
       margin-top: 20px;
     }
-
     section {
       padding: 40px 20px;
       text-align: center;
     }
-
     section h2 {
       margin-bottom: 20px;
       color: var(--color-secundario);
     }
-
     .menu-grid {
       display: flex;
       flex-wrap: wrap;
@@ -138,7 +120,6 @@
       gap: 30px;
       margin-top: 30px;
     }
-
     .menu-item {
       background: #fff;
       border-radius: 12px;
@@ -147,45 +128,50 @@
       width: 220px;
       text-align: center;
     }
-
     .menu-item h3 {
       color: #2c3e50;
       margin-top: 10px;
       font-size: 18px;
     }
-
+    .menu-item button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: var(--color-secundario);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .menu-item button:hover {
+      background-color: #d35400;
+    }
     .contacto {
       background-color: #fdf1e0;
       padding: 40px 20px;
       margin-top: 50px;
     }
-
     .contacto p {
       font-size: 18px;
       margin: 8px 0;
     }
-
     footer {
       background-color: var(--oscuro);
       color: var(--blanco);
       text-align: center;
       padding: 15px;
     }
-
     @media (max-width: 768px) {
       h1 {
         font-size: 32px;
       }
-
       .sidebar {
         left: 10px;
       }
-
       nav a {
         font-size: 14px;
         padding: 8px 14px;
       }
-
       header img {
         width: 150px;
       }
@@ -193,7 +179,6 @@
   </style>
 </head>
 <body>
-
 <div class="sidebar">
   <button onclick="toggleMenu()">☰ Menú</button>
   <div id="menuContent" class="menu-content">
@@ -202,7 +187,6 @@
     <a href="#contacto">Contacto</a>
   </div>
 </div>
-
 <header>
   <h1>Cangreburguer</h1>
   <img src="image.webp" alt="Hamburguesa">
@@ -213,48 +197,63 @@
     <a href="#contacto">👤 Contacto</a>
   </nav>
 </header>
-
 <main id="inicio">
   <p>¡Ven y disfruta de una experiencia inolvidable con nuestras deliciosas hamburguesas!</p>
   <img src="cangreburguer-bob-esponjapng.webp" alt="Cangreburguer Bob Esponja">
 </main>
-
 <section id="menu">
   <h2>🍔 Menú</h2>
   <p>Descubre nuestras hamburguesas especiales:</p>
   <div class="menu-grid">
     <div class="menu-item">
       <h3>🔥 <strong>Cangreburguer Clásica</strong></h3>
+      <button onclick="ordenar('Cangreburguer Clásica')">Ordenar</button>
     </div>
     <div class="menu-item">
       <h3>🧀 <strong>Doble Queso Fundido</strong></h3>
+      <button onclick="ordenar('Doble Queso Fundido')">Ordenar</button>
     </div>
     <div class="menu-item">
       <h3>🥓 <strong>Bacon Especial</strong></h3>
+      <button onclick="ordenar('Bacon Especial')">Ordenar</button>
     </div>
     <div class="menu-item">
       <h3>🌶️ <strong>Picante Tena Style</strong></h3>
+      <button onclick="ordenar('Picante Tena Style')">Ordenar</button>
     </div>
   </div>
 </section>
-
 <section id="contacto" class="contacto">
   <h2>📞 Contáctanos</h2>
   <p>📍 <strong>Dirección:</strong> Calle Principal, Tena, Ecuador</p>
   <p>📱 <strong>Teléfono:</strong> +593 987 654 321</p>
   <p>📧 <strong>Email:</strong> contacto@cangreburguer.com</p>
 </section>
-
 <footer>
   <p>&copy; 2025 Cangreburguer. Todos los derechos reservados.</p>
 </footer>
-
 <script>
   function toggleMenu() {
     const menu = document.getElementById("menuContent");
     menu.style.display = menu.style.display === "flex" ? "none" : "flex";
   }
+  function ordenar(nombrePlato) {
+    alert(`🍽️ Has ordenado: ${nombrePlato}`);
+  }
+  window.addEventListener("scroll", () => {
+    const links = document.querySelectorAll("nav a");
+    const secciones = document.querySelectorAll("main, section");
+    let scrollY = window.pageYOffset;
+    secciones.forEach(sec => {
+      const top = sec.offsetTop - 100;
+      const bottom = top + sec.offsetHeight;
+      const id = sec.getAttribute("id");
+      if (scrollY >= top && scrollY < bottom) {
+        links.forEach(link => link.classList.remove("activo"));
+        document.querySelector(`nav a[href='#${id}']`)?.classList.add("activo");
+      }
+    });
+  });
 </script>
-
 </body>
 </html>
